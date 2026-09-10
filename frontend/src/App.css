@@ -1,0 +1,1300 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", "Noto Sans Devanagari", sans-serif;
+  background: #ffffff;
+}
+
+button {
+  font-family: inherit;
+}
+
+.birthday-app {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 10% 10%,
+      rgba(255, 0, 50, 0.08),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 90% 80%,
+      rgba(255, 0, 50, 0.07),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #ffffff 0%,
+      #fff7f8 45%,
+      #ffffff 100%
+    );
+
+  color: #261719;
+}
+
+/* ==================================================
+   BACKGROUND ANIMATION
+================================================== */
+
+.background-animation {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.background-animation span {
+  position: absolute;
+  font-size: 25px;
+  opacity: 0.25;
+
+  animation:
+    floating 10s ease-in-out infinite,
+    rotateElement 7s linear infinite;
+}
+
+.background-animation span:nth-child(1) {
+  left: 5%;
+  top: 20%;
+  animation-delay: 0s;
+}
+
+.background-animation span:nth-child(2) {
+  left: 15%;
+  top: 70%;
+  animation-delay: 1s;
+}
+
+.background-animation span:nth-child(3) {
+  left: 30%;
+  top: 15%;
+  animation-delay: 2s;
+}
+
+.background-animation span:nth-child(4) {
+  left: 45%;
+  top: 80%;
+  animation-delay: 3s;
+}
+
+.background-animation span:nth-child(5) {
+  left: 60%;
+  top: 20%;
+  animation-delay: 4s;
+}
+
+.background-animation span:nth-child(6) {
+  left: 75%;
+  top: 70%;
+  animation-delay: 5s;
+}
+
+.background-animation span:nth-child(7) {
+  left: 90%;
+  top: 25%;
+  animation-delay: 6s;
+}
+
+.background-animation span:nth-child(8) {
+  left: 82%;
+  top: 50%;
+  animation-delay: 7s;
+}
+
+.background-animation span:nth-child(9) {
+  left: 25%;
+  top: 45%;
+  animation-delay: 8s;
+}
+
+.background-animation span:nth-child(10) {
+  left: 95%;
+  top: 85%;
+  animation-delay: 9s;
+}
+
+@keyframes floating {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-50px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes rotateElement {
+  from {
+    rotate: 0deg;
+  }
+
+  to {
+    rotate: 360deg;
+  }
+}
+
+/* ==================================================
+   SURPRISE SCREEN
+================================================== */
+
+.surprise-screen {
+  min-height: 100vh;
+
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  padding: 30px 20px;
+
+  animation: pageAppear 1s ease;
+}
+
+@keyframes pageAppear {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.sparkles {
+  color: #d9002b;
+  font-size: 24px;
+  letter-spacing: 8px;
+
+  animation: sparkleAnimation 2s infinite;
+}
+
+@keyframes sparkleAnimation {
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+}
+
+.for-text {
+  margin-top: 25px;
+
+  color: #777;
+
+  font-size: 12px;
+  letter-spacing: 5px;
+  font-weight: 600;
+}
+
+.siddhi-name {
+  margin-top: 5px;
+
+  font-family: "Dancing Script", cursive;
+
+  font-size: clamp(70px, 12vw, 125px);
+
+  color: #c9002b;
+
+  text-shadow:
+    0 5px 20px rgba(201, 0, 43, 0.15);
+
+  animation: namePulse 2.5s infinite;
+}
+
+@keyframes namePulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.04);
+  }
+}
+
+.small-message {
+  max-width: 500px;
+
+  margin-top: 5px;
+
+  color: #666;
+
+  font-family: "Noto Sans Devanagari", sans-serif;
+
+  font-size: 16px;
+}
+
+/* ==================================================
+   GIFT
+================================================== */
+
+.gift-container {
+  position: relative;
+
+  width: 180px;
+  height: 160px;
+
+  margin: 55px 0 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gift-glow {
+  position: absolute;
+
+  width: 190px;
+  height: 190px;
+
+  border-radius: 50%;
+
+  background: rgba(220, 0, 45, 0.12);
+
+  filter: blur(25px);
+
+  animation: giftGlow 2s infinite;
+}
+
+@keyframes giftGlow {
+  0%,
+  100% {
+    transform: scale(0.85);
+  }
+
+  50% {
+    transform: scale(1.15);
+  }
+}
+
+.gift-box {
+  position: relative;
+
+  width: 150px;
+  height: 130px;
+
+  animation: giftFloat 2s ease-in-out infinite;
+}
+
+@keyframes giftFloat {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-2deg);
+  }
+
+  50% {
+    transform: translateY(-15px) rotate(2deg);
+  }
+}
+
+.gift-body {
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 150px;
+  height: 95px;
+
+  border-radius: 8px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #e40032,
+      #b90029
+    );
+
+  box-shadow:
+    0 15px 35px rgba(190, 0, 40, 0.3);
+}
+
+.gift-lid {
+  position: absolute;
+
+  left: -8px;
+  top: 20px;
+
+  width: 166px;
+  height: 32px;
+
+  border-radius: 7px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f3234d,
+      #c9002b
+    );
+
+  z-index: 3;
+
+  box-shadow:
+    0 8px 15px rgba(180, 0, 40, 0.2);
+}
+
+.vertical-ribbon {
+  position: absolute;
+
+  left: 61px;
+  top: 0;
+
+  width: 28px;
+  height: 100%;
+
+  background: #fff;
+
+  opacity: 0.9;
+}
+
+.gift-ribbon {
+  position: absolute;
+
+  left: 69px;
+  top: 0;
+
+  width: 28px;
+  height: 32px;
+
+  background: white;
+}
+
+/* ==================================================
+   SURPRISE BUTTON
+================================================== */
+
+.surprise-button {
+  border: none;
+
+  padding: 16px 32px;
+
+  border-radius: 50px;
+
+  background: #c9002b;
+
+  color: white;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 10px 30px rgba(201, 0, 43, 0.25);
+
+  transition: all 0.3s ease;
+}
+
+.surprise-button span {
+  margin: 0 8px;
+}
+
+.surprise-button:hover {
+  transform: translateY(-5px) scale(1.04);
+
+  background: #a90024;
+
+  box-shadow:
+    0 15px 40px rgba(201, 0, 43, 0.4);
+}
+
+.surprise-button:active {
+  transform: scale(0.95);
+}
+
+.click-text {
+  margin-top: 15px;
+
+  font-size: 11px;
+
+  color: #999;
+}
+
+/* ==================================================
+   WISH SCREEN
+================================================== */
+
+.wish-screen {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+
+  max-width: 1050px;
+
+  margin: auto;
+
+  padding: 50px 20px 80px;
+
+  text-align: center;
+
+  animation: wishReveal 1s ease;
+}
+
+@keyframes wishReveal {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==================================================
+   MAIN CARD
+================================================== */
+
+.main-card {
+  padding: 50px 35px;
+
+  border-radius: 35px;
+
+  background: rgba(255, 255, 255, 0.8);
+
+  border: 1px solid rgba(210, 0, 40, 0.12);
+
+  box-shadow:
+    0 30px 80px rgba(100, 0, 20, 0.1),
+    0 0 0 1px rgba(255, 255, 255, 0.8) inset;
+
+  backdrop-filter: blur(20px);
+}
+
+.top-flowers {
+  font-size: 24px;
+
+  letter-spacing: 8px;
+
+  color: #c9002b;
+}
+
+.special-text {
+  margin-top: 25px;
+
+  color: #c9002b;
+
+  font-size: 11px;
+
+  letter-spacing: 4px;
+
+  font-weight: 600;
+}
+
+.birthday-heading {
+  margin-top: 5px;
+
+  font-family: "Dancing Script", cursive;
+
+  font-size: clamp(55px, 9vw, 90px);
+
+  color: #b80027;
+}
+
+.birthday-name {
+  font-family: "Dancing Script", cursive;
+
+  font-size: clamp(45px, 7vw, 70px);
+
+  color: #222;
+}
+
+.cake {
+  font-size: 75px;
+
+  margin: 20px 0;
+
+  animation: cakeAnimation 2s infinite;
+}
+
+@keyframes cakeAnimation {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px) rotate(3deg);
+  }
+}
+
+.birthday-wish {
+  font-family: "Noto Sans Devanagari", sans-serif;
+
+  color: #c9002b;
+
+  font-size: 23px;
+
+  font-weight: 700;
+}
+
+.intro-text {
+  margin-top: 12px;
+
+  font-family: "Noto Sans Devanagari", sans-serif;
+
+  color: #666;
+
+  font-size: 15px;
+}
+
+/* ==================================================
+   HEALTH CARD
+================================================== */
+
+.health-card {
+  position: relative;
+
+  margin-top: 35px;
+
+  padding: 45px 30px;
+
+  border-radius: 30px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #fff,
+      #fff8f9
+    );
+
+  border: 1px solid rgba(201, 0, 43, 0.16);
+
+  box-shadow:
+    0 20px 60px rgba(150, 0, 30, 0.08);
+
+  overflow: hidden;
+}
+
+.health-card::before {
+  content: "";
+
+  position: absolute;
+
+  width: 180px;
+  height: 180px;
+
+  border-radius: 50%;
+
+  background: rgba(201, 0, 43, 0.05);
+
+  top: -80px;
+  right: -70px;
+}
+
+.health-icon {
+  font-size: 55px;
+
+  animation: plantAnimation 3s infinite;
+}
+
+@keyframes plantAnimation {
+  0%,
+  100% {
+    transform: rotate(-5deg);
+  }
+
+  50% {
+    transform: rotate(5deg) scale(1.08);
+  }
+}
+
+.health-label {
+  margin-top: 10px;
+
+  color: #c9002b;
+
+  font-size: 11px;
+
+  letter-spacing: 4px;
+
+  font-weight: 600;
+}
+
+.health-card h2 {
+  margin-top: 10px;
+
+  font-family: "Noto Sans Devanagari", sans-serif;
+
+  font-size: 25px;
+
+  color: #252525;
+}
+
+.health-content {
+  max-width: 750px;
+
+  margin: 30px auto 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 15px;
+}
+
+.health-item {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  padding: 17px 20px;
+
+  border-radius: 18px;
+
+  text-align: left;
+
+  background: rgba(201, 0, 43, 0.035);
+
+  border: 1px solid rgba(201, 0, 43, 0.07);
+
+  transition: all 0.3s ease;
+}
+
+.health-item:hover {
+  transform: translateX(6px);
+
+  background: rgba(201, 0, 43, 0.07);
+
+  border-color: rgba(201, 0, 43, 0.15);
+}
+
+.health-item span {
+  min-width: 35px;
+
+  font-size: 25px;
+}
+
+.health-item p {
+  margin: 0;
+
+  font-family: "Noto Sans Devanagari", sans-serif;
+
+  color: #555;
+
+  font-size: 15px;
+
+  line-height: 1.8;
+}
+
+.special-quote {
+  max-width: 700px;
+
+  margin: 30px auto 0;
+
+  padding: 22px;
+
+  border-radius: 18px;
+
+  background: #c9002b;
+
+  color: white;
+
+  font-family: "Noto Sans Devanagari", sans-serif;
+
+  line-height: 1.9;
+
+  font-size: 15px;
+
+  box-shadow:
+    0 12px 30px rgba(201, 0, 43, 0.2);
+}
+
+/* ==================================================
+   TEDDY + FLOWERS
+================================================== */
+
+.gift-section {
+  margin-top: 30px;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 25px;
+}
+
+.teddy-box,
+.flower-box {
+  padding: 35px 20px;
+
+  border-radius: 25px;
+
+  background: rgba(255, 255, 255, 0.9);
+
+  border: 1px solid rgba(201, 0, 43, 0.1);
+
+  box-shadow:
+    0 15px 40px rgba(100, 0, 20, 0.07);
+
+  position: relative;
+
+  transition: 0.4s;
+}
+
+.teddy-box:hover,
+.flower-box:hover {
+  transform: translateY(-7px);
+
+  box-shadow:
+    0 25px 50px rgba(150, 0, 30, 0.12);
+}
+
+.teddy {
+  font-size: 95px;
+
+  animation: teddyAnimation 2s infinite;
+}
+
+@keyframes teddyAnimation {
+  0%,
+  100% {
+    transform: rotate(-5deg);
+  }
+
+  50% {
+    transform: rotate(5deg);
+  }
+}
+
+.floating-heart {
+  position: absolute;
+
+  right: 35%;
+
+  top: 25px;
+
+  animation: heartUp 2s infinite;
+}
+
+@keyframes heartUp {
+  0% {
+    opacity: 0;
+
+    transform: translateY(15px);
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+
+    transform: translateY(-30px);
+  }
+}
+
+.flowers-animation {
+  font-size: 75px;
+
+  margin: 15px 0;
+
+  animation: flowerMove 3s infinite;
+}
+
+@keyframes flowerMove {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.teddy-box h3,
+.flower-box h3 {
+  color: #c9002b;
+
+  font-size: 18px;
+}
+
+.teddy-box p,
+.flower-box p {
+  color: #777;
+
+  font-size: 13px;
+
+  margin-top: 7px;
+}
+
+/* ==================================================
+   FINAL MESSAGE
+================================================== */
+
+.final-message {
+  margin-top: 35px;
+
+  padding: 40px 25px;
+}
+
+.final-flowers {
+  font-size: 30px;
+
+  letter-spacing: 8px;
+}
+
+.final-message h2 {
+  margin-top: 15px;
+
+  font-family: "Dancing Script", cursive;
+
+  color: #c9002b;
+
+  font-size: 42px;
+}
+
+.final-message p {
+  max-width: 680px;
+
+  margin: 14px auto;
+
+  font-family: "Noto Sans Devanagari", sans-serif;
+
+  color: #666;
+
+  line-height: 1.9;
+
+  font-size: 15px;
+}
+
+.final-wish {
+  margin-top: 30px;
+
+  font-family: "Dancing Script", cursive;
+
+  font-size: clamp(38px, 7vw, 65px);
+
+  font-weight: 700;
+
+  color: #c9002b;
+
+  text-shadow:
+    0 5px 20px rgba(201, 0, 43, 0.2);
+
+  animation: finalPulse 2s infinite;
+}
+
+@keyframes finalPulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.heart-line {
+  margin-top: 20px;
+
+  font-size: 23px;
+
+  letter-spacing: 8px;
+}
+
+/* ==================================================
+   CONFETTI
+================================================== */
+
+.confetti-container {
+  position: fixed;
+
+  inset: 0;
+
+  overflow: hidden;
+
+  pointer-events: none;
+
+  z-index: 20;
+}
+
+.confetti-container span {
+  position: absolute;
+
+  top: -40px;
+
+  font-size: 18px;
+
+  animation: confettiFall 5s linear infinite;
+}
+
+.confetti-container span:nth-child(1) {
+  left: 2%;
+  animation-delay: 0s;
+}
+
+.confetti-container span:nth-child(2) {
+  left: 7%;
+  animation-delay: 1s;
+}
+
+.confetti-container span:nth-child(3) {
+  left: 12%;
+  animation-delay: 2s;
+}
+
+.confetti-container span:nth-child(4) {
+  left: 17%;
+  animation-delay: 0.5s;
+}
+
+.confetti-container span:nth-child(5) {
+  left: 22%;
+  animation-delay: 1.5s;
+}
+
+.confetti-container span:nth-child(6) {
+  left: 27%;
+  animation-delay: 2.5s;
+}
+
+.confetti-container span:nth-child(7) {
+  left: 32%;
+  animation-delay: 0.8s;
+}
+
+.confetti-container span:nth-child(8) {
+  left: 37%;
+  animation-delay: 3s;
+}
+
+.confetti-container span:nth-child(9) {
+  left: 42%;
+  animation-delay: 1.2s;
+}
+
+.confetti-container span:nth-child(10) {
+  left: 47%;
+  animation-delay: 2.2s;
+}
+
+.confetti-container span:nth-child(11) {
+  left: 52%;
+  animation-delay: 0.4s;
+}
+
+.confetti-container span:nth-child(12) {
+  left: 57%;
+  animation-delay: 2.8s;
+}
+
+.confetti-container span:nth-child(13) {
+  left: 62%;
+  animation-delay: 1s;
+}
+
+.confetti-container span:nth-child(14) {
+  left: 67%;
+  animation-delay: 3.2s;
+}
+
+.confetti-container span:nth-child(15) {
+  left: 72%;
+  animation-delay: 0.7s;
+}
+
+.confetti-container span:nth-child(16) {
+  left: 77%;
+  animation-delay: 2s;
+}
+
+.confetti-container span:nth-child(17) {
+  left: 82%;
+  animation-delay: 1.5s;
+}
+
+.confetti-container span:nth-child(18) {
+  left: 87%;
+  animation-delay: 2.5s;
+}
+
+.confetti-container span:nth-child(19) {
+  left: 92%;
+  animation-delay: 0.3s;
+}
+
+.confetti-container span:nth-child(20) {
+  left: 97%;
+  animation-delay: 1.8s;
+}
+
+@keyframes confettiFall {
+  0% {
+    transform: translateY(-50px) rotate(0deg);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(110vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+/* ==================================================
+   AGAIN BUTTON
+================================================== */
+
+.again-button {
+  display: block;
+
+  margin: 35px auto 0;
+
+  padding: 13px 25px;
+
+  border-radius: 30px;
+
+  border: 1px solid rgba(201, 0, 43, 0.2);
+
+  background: white;
+
+  color: #c9002b;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.again-button:hover {
+  background: #c9002b;
+
+  color: white;
+
+  transform: translateY(-3px);
+}
+
+/* ==================================================
+   MOBILE RESPONSIVE
+================================================== */
+
+@media (max-width: 700px) {
+
+  .surprise-screen {
+    padding: 25px 15px;
+  }
+
+  .for-text {
+    font-size: 10px;
+
+    letter-spacing: 3px;
+  }
+
+  .small-message {
+    font-size: 14px;
+
+    max-width: 330px;
+
+    line-height: 1.8;
+  }
+
+  .gift-container {
+    margin-top: 45px;
+    margin-bottom: 35px;
+  }
+
+  .surprise-button {
+    padding: 15px 25px;
+
+    font-size: 15px;
+  }
+
+  .wish-screen {
+    padding: 25px 12px 60px;
+  }
+
+  .main-card {
+    padding: 35px 15px;
+
+    border-radius: 25px;
+  }
+
+  .top-flowers {
+    font-size: 18px;
+
+    letter-spacing: 3px;
+  }
+
+  .special-text {
+    font-size: 9px;
+
+    letter-spacing: 2px;
+  }
+
+  .birthday-wish {
+    font-size: 19px;
+  }
+
+  .intro-text {
+    font-size: 13px;
+
+    line-height: 1.8;
+  }
+
+  .health-card {
+    padding: 35px 15px;
+
+    border-radius: 23px;
+  }
+
+  .health-card h2 {
+    font-size: 20px;
+
+    line-height: 1.6;
+  }
+
+  .health-label {
+    font-size: 9px;
+
+    letter-spacing: 2px;
+  }
+
+  .health-content {
+    margin-top: 25px;
+
+    gap: 10px;
+  }
+
+  .health-item {
+    padding: 14px;
+
+    gap: 10px;
+
+    align-items: flex-start;
+  }
+
+  .health-item span {
+    min-width: 28px;
+
+    font-size: 21px;
+  }
+
+  .health-item p {
+    font-size: 13px;
+
+    line-height: 1.8;
+  }
+
+  .special-quote {
+    padding: 17px;
+
+    font-size: 13px;
+
+    line-height: 1.9;
+  }
+
+  .gift-section {
+    grid-template-columns: 1fr;
+
+    gap: 15px;
+  }
+
+  .teddy-box,
+  .flower-box {
+    padding: 30px 15px;
+  }
+
+  .teddy {
+    font-size: 80px;
+  }
+
+  .flowers-animation {
+    font-size: 60px;
+  }
+
+  .final-message {
+    padding: 30px 10px;
+  }
+
+  .final-message h2 {
+    font-size: 34px;
+  }
+
+  .final-message p {
+    font-size: 13px;
+
+    line-height: 1.9;
+  }
+
+  .heart-line {
+    font-size: 18px;
+
+    letter-spacing: 4px;
+  }
+}
+
+/* ==================================================
+   SMALL PHONES
+================================================== */
+
+@media (max-width: 380px) {
+
+  .siddhi-name {
+    font-size: 70px;
+  }
+
+  .birthday-heading {
+    font-size: 52px;
+  }
+
+  .birthday-name {
+    font-size: 45px;
+  }
+
+  .cake {
+    font-size: 60px;
+  }
+
+  .health-card h2 {
+    font-size: 18px;
+  }
+
+  .health-item p {
+    font-size: 12px;
+  }
+
+  .special-quote {
+    font-size: 12px;
+  }
+
+  .final-wish {
+    font-size: 38px;
+  }
+}
