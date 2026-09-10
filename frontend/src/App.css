@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap");
 
 * {
   margin: 0;
@@ -12,7 +12,7 @@ html {
 
 body {
   margin: 0;
-  font-family: "Poppins", "Noto Sans Devanagari", sans-serif;
+  font-family: "Poppins", sans-serif;
   background: #ffffff;
 }
 
@@ -46,32 +46,37 @@ button {
   color: #261719;
 }
 
-/* ==================================================
-   BACKGROUND ANIMATION
-================================================== */
+
+/* =====================================================
+   BACKGROUND
+===================================================== */
 
 .background-animation {
   position: fixed;
   inset: 0;
+
   overflow: hidden;
+
   pointer-events: none;
+
   z-index: 0;
 }
 
 .background-animation span {
   position: absolute;
-  font-size: 25px;
-  opacity: 0.25;
+
+  font-size: 24px;
+
+  opacity: 0.2;
 
   animation:
-    floating 10s ease-in-out infinite,
+    floating 9s ease-in-out infinite,
     rotateElement 7s linear infinite;
 }
 
 .background-animation span:nth-child(1) {
   left: 5%;
   top: 20%;
-  animation-delay: 0s;
 }
 
 .background-animation span:nth-child(2) {
@@ -125,8 +130,21 @@ button {
 .background-animation span:nth-child(10) {
   left: 95%;
   top: 85%;
-  animation-delay: 9s;
+  animation-delay: 2s;
 }
+
+.background-animation span:nth-child(11) {
+  left: 52%;
+  top: 45%;
+  animation-delay: 3s;
+}
+
+.background-animation span:nth-child(12) {
+  left: 70%;
+  top: 10%;
+  animation-delay: 5s;
+}
+
 
 @keyframes floating {
   0% {
@@ -142,6 +160,7 @@ button {
   }
 }
 
+
 @keyframes rotateElement {
   from {
     rotate: 0deg;
@@ -152,18 +171,21 @@ button {
   }
 }
 
-/* ==================================================
+
+/* =====================================================
    SURPRISE SCREEN
-================================================== */
+===================================================== */
 
 .surprise-screen {
   min-height: 100vh;
 
   position: relative;
+
   z-index: 2;
 
   display: flex;
   flex-direction: column;
+
   align-items: center;
   justify-content: center;
 
@@ -174,48 +196,61 @@ button {
   animation: pageAppear 1s ease;
 }
 
+
 @keyframes pageAppear {
   from {
     opacity: 0;
-    transform: translateY(20px);
+
+    transform: translateY(25px);
   }
 
   to {
     opacity: 1;
+
     transform: translateY(0);
   }
 }
 
+
 .sparkles {
-  color: #d9002b;
-  font-size: 24px;
+  color: #d0002b;
+
+  font-size: 25px;
+
   letter-spacing: 8px;
 
   animation: sparkleAnimation 2s infinite;
 }
 
+
 @keyframes sparkleAnimation {
   0%,
   100% {
     opacity: 0.4;
+
     transform: scale(1);
   }
 
   50% {
     opacity: 1;
+
     transform: scale(1.15);
   }
 }
 
+
 .for-text {
-  margin-top: 25px;
+  margin-top: 20px;
 
   color: #777;
 
   font-size: 12px;
+
   letter-spacing: 5px;
+
   font-weight: 600;
 }
+
 
 .siddhi-name {
   margin-top: 5px;
@@ -232,6 +267,7 @@ button {
   animation: namePulse 2.5s infinite;
 }
 
+
 @keyframes namePulse {
   0%,
   100% {
@@ -243,39 +279,46 @@ button {
   }
 }
 
+
 .small-message {
-  max-width: 500px;
+  max-width: 520px;
 
   margin-top: 5px;
 
   color: #666;
 
-  font-family: "Noto Sans Devanagari", sans-serif;
-
   font-size: 16px;
+
+  line-height: 1.7;
 }
 
-/* ==================================================
+
+/* =====================================================
    GIFT
-================================================== */
+===================================================== */
 
 .gift-container {
   position: relative;
 
   width: 180px;
+
   height: 160px;
 
-  margin: 55px 0 40px;
+  margin: 45px 0 25px;
 
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 }
+
 
 .gift-glow {
   position: absolute;
 
   width: 190px;
+
   height: 190px;
 
   border-radius: 50%;
@@ -286,6 +329,7 @@ button {
 
   animation: giftGlow 2s infinite;
 }
+
 
 @keyframes giftGlow {
   0%,
@@ -298,14 +342,17 @@ button {
   }
 }
 
+
 .gift-box {
   position: relative;
 
   width: 150px;
+
   height: 130px;
 
   animation: giftFloat 2s ease-in-out infinite;
 }
+
 
 @keyframes giftFloat {
   0%,
@@ -318,13 +365,16 @@ button {
   }
 }
 
+
 .gift-body {
   position: absolute;
 
   left: 0;
+
   bottom: 0;
 
   width: 150px;
+
   height: 95px;
 
   border-radius: 8px;
@@ -340,13 +390,16 @@ button {
     0 15px 35px rgba(190, 0, 40, 0.3);
 }
 
+
 .gift-lid {
   position: absolute;
 
   left: -8px;
+
   top: 20px;
 
   width: 166px;
+
   height: 32px;
 
   border-radius: 7px;
@@ -364,40 +417,101 @@ button {
     0 8px 15px rgba(180, 0, 40, 0.2);
 }
 
+
 .vertical-ribbon {
   position: absolute;
 
   left: 61px;
+
   top: 0;
 
   width: 28px;
+
   height: 100%;
 
-  background: #fff;
+  background: white;
 
   opacity: 0.9;
 }
+
 
 .gift-ribbon {
   position: absolute;
 
   left: 69px;
+
   top: 0;
 
   width: 28px;
+
   height: 32px;
 
   background: white;
 }
 
-/* ==================================================
+
+/* =====================================================
+   QUESTION
+===================================================== */
+
+.question-area {
+  margin-top: 10px;
+}
+
+
+.question-area h2 {
+  font-size: 20px;
+
+  color: #333;
+
+  font-weight: 600;
+}
+
+
+.question-area p {
+  margin-top: 5px;
+
+  color: #999;
+
+  font-size: 13px;
+}
+
+
+/* =====================================================
+   BUTTON AREA
+===================================================== */
+
+.button-area {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 14px;
+
+  min-height: 65px;
+
+  margin-top: 22px;
+
+  width: 100%;
+
+  max-width: 500px;
+}
+
+
+/* =====================================================
    SURPRISE BUTTON
-================================================== */
+===================================================== */
 
 .surprise-button {
   border: none;
 
-  padding: 16px 32px;
+  padding: 16px 27px;
+
+  min-width: 190px;
 
   border-radius: 50px;
 
@@ -405,7 +519,8 @@ button {
 
   color: white;
 
-  font-size: 16px;
+  font-size: 15px;
+
   font-weight: 600;
 
   cursor: pointer;
@@ -413,12 +528,17 @@ button {
   box-shadow:
     0 10px 30px rgba(201, 0, 43, 0.25);
 
-  transition: all 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
+
 .surprise-button span {
-  margin: 0 8px;
+  margin: 0 6px;
 }
+
 
 .surprise-button:hover {
   transform: translateY(-5px) scale(1.04);
@@ -429,24 +549,115 @@ button {
     0 15px 40px rgba(201, 0, 43, 0.4);
 }
 
+
 .surprise-button:active {
   transform: scale(0.95);
 }
 
+
+/* =====================================================
+   IGNORE BUTTON
+===================================================== */
+
+.ignore-button {
+  min-width: 115px;
+
+  padding: 15px 23px;
+
+  border-radius: 50px;
+
+  border: 1px solid #ddd;
+
+  background: white;
+
+  color: #777;
+
+  font-size: 14px;
+
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition:
+    top 0.25s ease,
+    left 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+
+  z-index: 5;
+}
+
+
+.ignore-button:hover {
+  color: #c9002b;
+
+  border-color: #e4a4af;
+
+  box-shadow:
+    0 8px 25px rgba(201, 0, 43, 0.12);
+}
+
+
+/*
+   When user touches / tries to click
+   the button, it becomes fixed and
+   moves to the top.
+*/
+
+.ignore-button.ignore-moving {
+  position: fixed;
+
+  top: 25px;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  z-index: 999;
+
+  animation: ignoreJump 0.5s ease;
+}
+
+
+@keyframes ignoreJump {
+  0% {
+    transform:
+      translateX(-50%)
+      scale(1);
+  }
+
+  50% {
+    transform:
+      translateX(-50%)
+      scale(1.15)
+      rotate(-5deg);
+  }
+
+  100% {
+    transform:
+      translateX(-50%)
+      scale(1)
+      rotate(0);
+  }
+}
+
+
 .click-text {
-  margin-top: 15px;
+  margin-top: 12px;
 
   font-size: 11px;
 
-  color: #999;
+  color: #aaa;
 }
 
-/* ==================================================
+
+/* =====================================================
    WISH SCREEN
-================================================== */
+===================================================== */
 
 .wish-screen {
   position: relative;
+
   z-index: 2;
 
   width: 100%;
@@ -462,28 +673,32 @@ button {
   animation: wishReveal 1s ease;
 }
 
+
 @keyframes wishReveal {
   from {
     opacity: 0;
+
     transform: translateY(40px);
   }
 
   to {
     opacity: 1;
+
     transform: translateY(0);
   }
 }
 
-/* ==================================================
+
+/* =====================================================
    MAIN CARD
-================================================== */
+===================================================== */
 
 .main-card {
   padding: 50px 35px;
 
   border-radius: 35px;
 
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.85);
 
   border: 1px solid rgba(210, 0, 40, 0.12);
 
@@ -494,6 +709,7 @@ button {
   backdrop-filter: blur(20px);
 }
 
+
 .top-flowers {
   font-size: 24px;
 
@@ -501,6 +717,7 @@ button {
 
   color: #c9002b;
 }
+
 
 .special-text {
   margin-top: 25px;
@@ -514,6 +731,7 @@ button {
   font-weight: 600;
 }
 
+
 .birthday-heading {
   margin-top: 5px;
 
@@ -524,6 +742,7 @@ button {
   color: #b80027;
 }
 
+
 .birthday-name {
   font-family: "Dancing Script", cursive;
 
@@ -531,6 +750,7 @@ button {
 
   color: #222;
 }
+
 
 .cake {
   font-size: 75px;
@@ -540,6 +760,7 @@ button {
   animation: cakeAnimation 2s infinite;
 }
 
+
 @keyframes cakeAnimation {
   0%,
   100% {
@@ -547,13 +768,14 @@ button {
   }
 
   50% {
-    transform: translateY(-12px) rotate(3deg);
+    transform:
+      translateY(-12px)
+      rotate(3deg);
   }
 }
 
-.birthday-wish {
-  font-family: "Noto Sans Devanagari", sans-serif;
 
+.birthday-wish {
   color: #c9002b;
 
   font-size: 23px;
@@ -561,19 +783,19 @@ button {
   font-weight: 700;
 }
 
+
 .intro-text {
   margin-top: 12px;
-
-  font-family: "Noto Sans Devanagari", sans-serif;
 
   color: #666;
 
   font-size: 15px;
 }
 
-/* ==================================================
+
+/* =====================================================
    HEALTH CARD
-================================================== */
+===================================================== */
 
 .health-card {
   position: relative;
@@ -599,12 +821,14 @@ button {
   overflow: hidden;
 }
 
+
 .health-card::before {
   content: "";
 
   position: absolute;
 
   width: 180px;
+
   height: 180px;
 
   border-radius: 50%;
@@ -612,14 +836,17 @@ button {
   background: rgba(201, 0, 43, 0.05);
 
   top: -80px;
+
   right: -70px;
 }
+
 
 .health-icon {
   font-size: 55px;
 
   animation: plantAnimation 3s infinite;
 }
+
 
 @keyframes plantAnimation {
   0%,
@@ -628,9 +855,12 @@ button {
   }
 
   50% {
-    transform: rotate(5deg) scale(1.08);
+    transform:
+      rotate(5deg)
+      scale(1.08);
   }
 }
+
 
 .health-label {
   margin-top: 10px;
@@ -644,15 +874,15 @@ button {
   font-weight: 600;
 }
 
+
 .health-card h2 {
   margin-top: 10px;
-
-  font-family: "Noto Sans Devanagari", sans-serif;
 
   font-size: 25px;
 
   color: #252525;
 }
+
 
 .health-content {
   max-width: 750px;
@@ -665,6 +895,7 @@ button {
 
   gap: 15px;
 }
+
 
 .health-item {
   display: flex;
@@ -686,6 +917,7 @@ button {
   transition: all 0.3s ease;
 }
 
+
 .health-item:hover {
   transform: translateX(6px);
 
@@ -694,16 +926,16 @@ button {
   border-color: rgba(201, 0, 43, 0.15);
 }
 
+
 .health-item span {
   min-width: 35px;
 
   font-size: 25px;
 }
 
+
 .health-item p {
   margin: 0;
-
-  font-family: "Noto Sans Devanagari", sans-serif;
 
   color: #555;
 
@@ -711,6 +943,7 @@ button {
 
   line-height: 1.8;
 }
+
 
 .special-quote {
   max-width: 700px;
@@ -725,8 +958,6 @@ button {
 
   color: white;
 
-  font-family: "Noto Sans Devanagari", sans-serif;
-
   line-height: 1.9;
 
   font-size: 15px;
@@ -735,9 +966,10 @@ button {
     0 12px 30px rgba(201, 0, 43, 0.2);
 }
 
-/* ==================================================
+
+/* =====================================================
    TEDDY + FLOWERS
-================================================== */
+===================================================== */
 
 .gift-section {
   margin-top: 30px;
@@ -748,6 +980,7 @@ button {
 
   gap: 25px;
 }
+
 
 .teddy-box,
 .flower-box {
@@ -767,6 +1000,7 @@ button {
   transition: 0.4s;
 }
 
+
 .teddy-box:hover,
 .flower-box:hover {
   transform: translateY(-7px);
@@ -775,11 +1009,13 @@ button {
     0 25px 50px rgba(150, 0, 30, 0.12);
 }
 
+
 .teddy {
   font-size: 95px;
 
   animation: teddyAnimation 2s infinite;
 }
+
 
 @keyframes teddyAnimation {
   0%,
@@ -792,6 +1028,7 @@ button {
   }
 }
 
+
 .floating-heart {
   position: absolute;
 
@@ -801,6 +1038,7 @@ button {
 
   animation: heartUp 2s infinite;
 }
+
 
 @keyframes heartUp {
   0% {
@@ -820,6 +1058,7 @@ button {
   }
 }
 
+
 .flowers-animation {
   font-size: 75px;
 
@@ -827,6 +1066,7 @@ button {
 
   animation: flowerMove 3s infinite;
 }
+
 
 @keyframes flowerMove {
   0%,
@@ -839,12 +1079,14 @@ button {
   }
 }
 
+
 .teddy-box h3,
 .flower-box h3 {
   color: #c9002b;
 
   font-size: 18px;
 }
+
 
 .teddy-box p,
 .flower-box p {
@@ -855,9 +1097,10 @@ button {
   margin-top: 7px;
 }
 
-/* ==================================================
+
+/* =====================================================
    FINAL MESSAGE
-================================================== */
+===================================================== */
 
 .final-message {
   margin-top: 35px;
@@ -865,11 +1108,13 @@ button {
   padding: 40px 25px;
 }
 
+
 .final-flowers {
   font-size: 30px;
 
   letter-spacing: 8px;
 }
+
 
 .final-message h2 {
   margin-top: 15px;
@@ -881,12 +1126,11 @@ button {
   font-size: 42px;
 }
 
+
 .final-message p {
   max-width: 680px;
 
   margin: 14px auto;
-
-  font-family: "Noto Sans Devanagari", sans-serif;
 
   color: #666;
 
@@ -894,6 +1138,7 @@ button {
 
   font-size: 15px;
 }
+
 
 .final-wish {
   margin-top: 30px;
@@ -912,6 +1157,7 @@ button {
   animation: finalPulse 2s infinite;
 }
 
+
 @keyframes finalPulse {
   0%,
   100% {
@@ -923,6 +1169,7 @@ button {
   }
 }
 
+
 .heart-line {
   margin-top: 20px;
 
@@ -931,9 +1178,10 @@ button {
   letter-spacing: 8px;
 }
 
-/* ==================================================
+
+/* =====================================================
    CONFETTI
-================================================== */
+===================================================== */
 
 .confetti-container {
   position: fixed;
@@ -947,6 +1195,7 @@ button {
   z-index: 20;
 }
 
+
 .confetti-container span {
   position: absolute;
 
@@ -956,6 +1205,7 @@ button {
 
   animation: confettiFall 5s linear infinite;
 }
+
 
 .confetti-container span:nth-child(1) {
   left: 2%;
@@ -1057,21 +1307,29 @@ button {
   animation-delay: 1.8s;
 }
 
+
 @keyframes confettiFall {
   0% {
-    transform: translateY(-50px) rotate(0deg);
+    transform:
+      translateY(-50px)
+      rotate(0deg);
+
     opacity: 1;
   }
 
   100% {
-    transform: translateY(110vh) rotate(720deg);
+    transform:
+      translateY(110vh)
+      rotate(720deg);
+
     opacity: 0;
   }
 }
 
-/* ==================================================
+
+/* =====================================================
    AGAIN BUTTON
-================================================== */
+===================================================== */
 
 .again-button {
   display: block;
@@ -1093,6 +1351,7 @@ button {
   transition: 0.3s;
 }
 
+
 .again-button:hover {
   background: #c9002b;
 
@@ -1101,9 +1360,10 @@ button {
   transform: translateY(-3px);
 }
 
-/* ==================================================
-   MOBILE RESPONSIVE
-================================================== */
+
+/* =====================================================
+   TABLET
+===================================================== */
 
 @media (max-width: 700px) {
 
@@ -1111,34 +1371,71 @@ button {
     padding: 25px 15px;
   }
 
+
   .for-text {
     font-size: 10px;
 
     letter-spacing: 3px;
   }
 
+
   .small-message {
     font-size: 14px;
 
     max-width: 330px;
-
-    line-height: 1.8;
   }
+
 
   .gift-container {
-    margin-top: 45px;
-    margin-bottom: 35px;
+    margin-top: 40px;
+
+    margin-bottom: 20px;
   }
+
+
+  .question-area h2 {
+    font-size: 18px;
+  }
+
+
+  .question-area p {
+    font-size: 12px;
+  }
+
+
+  /*
+     Buttons stay side-by-side initially
+  */
+
+  .button-area {
+    gap: 10px;
+
+    max-width: 400px;
+  }
+
 
   .surprise-button {
-    padding: 15px 25px;
+    min-width: 175px;
 
-    font-size: 15px;
+    padding: 15px 20px;
+
+    font-size: 14px;
   }
+
+
+  .ignore-button {
+    min-width: 100px;
+
+    padding: 14px 17px;
+
+    font-size: 13px;
+  }
+
 
   .wish-screen {
     padding: 25px 12px 60px;
   }
+
 
   .main-card {
     padding: 35px 15px;
@@ -1146,11 +1443,13 @@ button {
     border-radius: 25px;
   }
 
+
   .top-flowers {
     font-size: 18px;
 
     letter-spacing: 3px;
   }
+
 
   .special-text {
     font-size: 9px;
@@ -1158,9 +1457,11 @@ button {
     letter-spacing: 2px;
   }
 
+
   .birthday-wish {
     font-size: 19px;
   }
+
 
   .intro-text {
     font-size: 13px;
@@ -1168,11 +1469,13 @@ button {
     line-height: 1.8;
   }
 
+
   .health-card {
     padding: 35px 15px;
 
     border-radius: 23px;
   }
+
 
   .health-card h2 {
     font-size: 20px;
@@ -1180,17 +1483,20 @@ button {
     line-height: 1.6;
   }
 
+
   .health-label {
     font-size: 9px;
 
     letter-spacing: 2px;
   }
 
+
   .health-content {
     margin-top: 25px;
 
     gap: 10px;
   }
+
 
   .health-item {
     padding: 14px;
@@ -1200,17 +1506,20 @@ button {
     align-items: flex-start;
   }
 
+
   .health-item span {
     min-width: 28px;
 
     font-size: 21px;
   }
 
+
   .health-item p {
     font-size: 13px;
 
     line-height: 1.8;
   }
+
 
   .special-quote {
     padding: 17px;
@@ -1220,38 +1529,46 @@ button {
     line-height: 1.9;
   }
 
+
   .gift-section {
     grid-template-columns: 1fr;
 
     gap: 15px;
   }
 
+
   .teddy-box,
   .flower-box {
     padding: 30px 15px;
   }
 
+
   .teddy {
     font-size: 80px;
   }
+
 
   .flowers-animation {
     font-size: 60px;
   }
 
+
   .final-message {
     padding: 30px 10px;
   }
 
+
   .final-message h2 {
     font-size: 34px;
   }
+
 
   .final-message p {
     font-size: 13px;
 
     line-height: 1.9;
   }
+
 
   .heart-line {
     font-size: 18px;
@@ -1260,41 +1577,134 @@ button {
   }
 }
 
-/* ==================================================
-   SMALL PHONES
-================================================== */
 
-@media (max-width: 380px) {
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 430px) {
 
   .siddhi-name {
-    font-size: 70px;
+    font-size: 72px;
   }
+
+
+  .gift-container {
+    transform: scale(0.9);
+  }
+
+
+  .question-area {
+    margin-top: 0;
+  }
+
+
+  .question-area h2 {
+    font-size: 16px;
+  }
+
+
+  /*
+     Keep buttons side-by-side
+     on normal state
+  */
+
+  .button-area {
+    gap: 7px;
+  }
+
+
+  .surprise-button {
+    min-width: 165px;
+
+    padding: 14px 12px;
+
+    font-size: 13px;
+  }
+
+
+  .surprise-button span {
+    margin: 0 3px;
+  }
+
+
+  .ignore-button {
+    min-width: 95px;
+
+    padding: 13px 10px;
+
+    font-size: 12px;
+  }
+
+
+  .click-text {
+    max-width: 280px;
+
+    line-height: 1.6;
+  }
+
 
   .birthday-heading {
     font-size: 52px;
   }
 
+
   .birthday-name {
     font-size: 45px;
   }
+
 
   .cake {
     font-size: 60px;
   }
 
+
   .health-card h2 {
     font-size: 18px;
   }
+
 
   .health-item p {
     font-size: 12px;
   }
 
+
   .special-quote {
     font-size: 12px;
   }
 
+
   .final-wish {
     font-size: 38px;
+  }
+}
+
+
+/* =====================================================
+   VERY SMALL PHONES
+===================================================== */
+
+@media (max-width: 350px) {
+
+  .button-area {
+    gap: 5px;
+  }
+
+
+  .surprise-button {
+    min-width: 150px;
+
+    font-size: 12px;
+
+    padding: 13px 8px;
+  }
+
+
+  .ignore-button {
+    min-width: 85px;
+
+    font-size: 11px;
+
+    padding: 12px 7px;
   }
 }
